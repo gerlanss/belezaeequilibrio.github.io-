@@ -24,15 +24,18 @@
             color: var(--text-color);
             background-color: #f9f9f9;
         }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
         h1, h2, h3 {
             color: var(--secondary-color);
             text-align: center;
             margin-bottom: 20px;
         }
         section {
-            padding: 60px 20px;
-            max-width: 1200px;
-            margin: 0 auto;
+            padding: 60px 0;
         }
         .btn {
             display: inline-block;
@@ -44,7 +47,7 @@
             border-radius: 5px;
             text-align: center;
             transition: all 0.3s;
-            margin: 10px 0;
+            margin: 10px;
         }
         .btn:hover {
             background-color: var(--secondary-color);
@@ -56,7 +59,7 @@
             background-position: center;
             color: #fff;
             text-align: center;
-            padding: 150px 20px;
+            padding: 150px 0;
             position: relative;
         }
         header::before {
@@ -68,7 +71,7 @@
             bottom: 0;
             background: rgba(0, 0, 0, 0.6);
         }
-        header * {
+        header .container {
             position: relative;
             z-index: 1;
         }
@@ -112,7 +115,7 @@
         .timeline {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-between;
+            justify-content: center;
             margin-top: 40px;
         }
         .timeline-item {
@@ -122,12 +125,18 @@
             background-color: #e8f6e9;
             border-radius: 10px;
             margin: 10px;
+            max-width: 250px;
+        }
+        .ingredients-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         .ingredient {
-            display: inline-block;
-            width: 30%;
+            flex: 1 1 30%;
             margin: 10px;
             text-align: center;
+            min-width: 200px;
         }
         .ingredient img {
             width: 100px;
@@ -138,7 +147,7 @@
         .media-recognition {
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: center;
             align-items: center;
             margin-top: 40px;
         }
@@ -150,8 +159,10 @@
         .sticky-cta {
             position: fixed;
             bottom: 20px;
-            right: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 1000;
+            width: 200px;
         }
         .fade-in {
             opacity: 0;
@@ -166,7 +177,7 @@
             background-color: var(--secondary-color);
             color: #fff;
             text-align: center;
-            padding: 30px 20px;
+            padding: 30px 0;
         }
         .progress-container {
             position: fixed;
@@ -202,17 +213,52 @@
             padding: 20px;
             border-radius: 10px;
             margin-top: 20px;
+            max-width: 400px;
+            margin-left: auto;
+            margin-right: auto;
         }
         .imc-calculator input {
             width: 100%;
+            max-width: 200px;
             padding: 10px;
             margin-bottom: 10px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .imc-calculator .btn {
+            display: block;
+            margin: 20px auto;
         }
         #imc-result {
             margin-top: 20px;
             padding: 15px;
             border-radius: 5px;
             font-weight: bold;
+            text-align: center;
+        }
+        .btn-center-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin: 20px 0;
+        }
+        
+        .btn-center {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: var(--primary-color);
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .btn-center:hover {
+            background-color: var(--secondary-color);
+            transform: scale(1.05);
         }
         .normal-imc {
             background-color: #2ecc71;
@@ -267,8 +313,7 @@
                 flex-basis: 100%;
             }
             .sticky-cta {
-                left: 20px;
-                right: 20px;
+                width: calc(100% - 40px);
             }
         }
     </style>
@@ -279,176 +324,213 @@
     </div>
 
     <header>
-        <h1>Transforme Seu Corpo em Apenas 30 Dias com OzenFit Caps!</h1>
-        <p>Descubra o Segredo dos Famosos para Emagrecer <span class="highlight">Até 10kg em 1 Mês</span> - 100% Natural e Sem Efeitos Colaterais!</p>
-        <a href="#produtos" class="btn">QUERO TRANSFORMAR MEU CORPO AGORA!</a>
+        <div class="container">
+            <h1>Transforme Seu Corpo em Apenas 30 Dias com OzenFit Caps!</h1>
+            <p>Descubra o Segredo dos Famosos para Emagrecer <span class="highlight">Até 10kg em 1 Mês</span> - 100% Natural e Sem Efeitos Colaterais!</p>
+            <a href="#produtos" class="btn">QUERO TRANSFORMAR MEU CORPO AGORA!</a>
+        </div>
     </header>
 
-    <section id="intro" class="fade-in">
-        <h2>Você Está Pronto para a Mudança da Sua Vida?</h2>
-        <p>OzenFit Caps não é apenas mais um suplemento. É a <strong>revolução do emagrecimento</strong> que vai transformar seu corpo e sua autoestima em tempo recorde!</p>
-        <img src="images/ozenfit-caps.jpg" alt="OzenFit Caps" style="display:block; margin: 0 auto; max-width: 300px; width: 100%;">
-        <a href="#produtos" class="btn">COMECE SUA TRANSFORMAÇÃO HOJE!</a>
-    </section>
-
-    <section id="beneficios" class="fade-in">
-        <h2>Por Que OzenFit Caps é a Escolha dos Vencedores?</h2>
-        <ul>
-            <li><strong>Metabolismo Turbinado:</strong> Queime calorias 24/7, mesmo dormindo!</li>
-            <li><strong>Adeus, Fome:</strong> Esqueça a ansiedade por comida e as dietas frustrantes.</li>
-            <li><strong>Energia Explosiva:</strong> Sinta-se disposto o dia todo, sem aquela preguiça.</li>
-            <li><strong>Resultados Rápidos:</strong> Veja a diferença já na primeira semana!</li>
-        </ul>
-        <p><strong>E o melhor:</strong> Tudo isso sem precisar passar horas na academia ou seguir dietas malucas!</p>
-        <a href="#produtos" class="btn">QUERO ESSES BENEFÍCIOS AGORA!</a>
-    </section>
-    <section id="como-funciona" class="fade-in">
-        <h2>Como OzenFit Caps Transforma Seu Corpo</h2>
-        <div class="timeline">
-            <div class="timeline-item">
-                <h3>Dia 1-7</h3>
-                <p>Aceleração do metabolismo e redução do apetite</p>
+    <main>
+        <section id="intro" class="fade-in">
+            <div class="btn-center-container">
+                <h2>Você Está Pronto para a Mudança da Sua Vida?</h2>
+                <p>OzenFit Caps não é apenas mais um suplemento. É a <strong>revolução do emagrecimento</strong> que vai transformar seu corpo e sua autoestima em tempo recorde!</p>
+                <img src="images/ozenfit-caps.jpg" alt="OzenFit Caps" style="display:block; margin: 0 auto; max-width: 300px; width: 100%;">
+                <a href="#produtos" class="btn">COMECE SUA TRANSFORMAÇÃO HOJE!</a>
             </div>
-            <div class="timeline-item">
-                <h3>Semana 2-3</h3>
-                <p>Aumento da queima de gordura e níveis de energia</p>
+        </section>
+
+        <section id="beneficios" class="fade-in">
+            <div class="btn-center-container">
+                <h2>Por Que OzenFit Caps é a Escolha dos Vencedores?</h2>
+                <ul style="list-style-type: none; padding: 0; text-align: center;">
+                    <li><strong>Metabolismo Turbinado:</strong> Queime calorias 24/7, mesmo dormindo!</li>
+                    <li><strong>Adeus, Fome:</strong> Esqueça a ansiedade por comida e as dietas frustrantes.</li>
+                    <li><strong>Energia Explosiva:</strong> Sinta-se disposto o dia todo, sem aquela preguiça.</li>
+                    <li><strong>Resultados Rápidos:</strong> Veja a diferença já na primeira semana!</li>
+                </ul>
+                <p><strong>E o melhor:</strong> Tudo isso sem precisar passar horas na academia ou seguir dietas malucas!</p>
+                <a href="#produtos" class="btn">QUERO ESSES BENEFÍCIOS AGORA!</a>
             </div>
-            <div class="timeline-item">
-                <h3>Mês 1</h3>
-                <p>Perda visível de peso e melhora na disposição</p>
+        </section>
+
+        <section id="como-funciona" class="fade-in">
+            <div class="container">
+                <h2>Como OzenFit Caps Transforma Seu Corpo</h2>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <h3>Dia 1-7</h3>
+                        <p>Aceleração do metabolismo e redução do apetite</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Semana 2-3</h3>
+                        <p>Aumento da queima de gordura e níveis de energia</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Mês 1</h3>
+                        <p>Perda visível de peso e melhora na disposição</p>
+                    </div>
+                    <div class="timeline-item">
+                        <h3>Mês 2-3</h3>
+                        <p>Transformação completa do corpo e autoestima</p>
+                    </div>
+                </div>
             </div>
-            <div class="timeline-item">
-                <h3>Mês 2-3</h3>
-                <p>Transformação completa do corpo e autoestima</p>
+        </section>
+
+        <section id="ingredientes" class="fade-in">
+            <div class="btn-center-container">
+                <h2>Poder da Natureza em Cada Cápsula</h2>
+                <div class="ingredients-grid">
+                    <div class="ingredient">
+                        <img src="ingredients/garcinia.jpg" alt="Garcinia Cambogia">
+                        <h3>Garcinia Cambogia</h3>
+                        <p>Reduz o apetite e bloqueia a produção de gordura</p>
+                    </div>
+                    <div class="ingredient">
+                        <img src="ingredients/green-tea.jpg" alt="Chá Verde">
+                        <h3>Chá Verde</h3>
+                        <p>Acelera o metabolismo e aumenta a queima de gordura</p>
+                    </div>
+                    <div class="ingredient">
+                        <img src="ingredients/caffeine.jpg" alt="Cafeína">
+                        <h3>Cafeína</h3>
+                        <p>Aumenta a energia e melhora o desempenho físico</p>
+                    </div>
+                </div>
+                <a href="#produtos" class="btn">EXPERIMENTE O PODER DA NATUREZA!</a>
+            </div>
+        </section>
+        <div class="sticky-cta">
+            <a href="#produtos" class="btn">COMPRE AGORA!</a>
+        </div>
+
+        <section id="video" class="fade-in">
+            <div class="btn-center-container">
+                <h2>Veja OzenFit Caps em Ação</h2>
+                <div style="text-align: center;">
+                    <img src="/api/placeholder/640/360" alt="Vídeo Explicativo" style="max-width: 100%; height: auto;"/>
+                    <p><em>Clique para assistir como OzenFit Caps revoluciona o emagrecimento</em></p>
+                </div>
+                <a href="#produtos" class="btn">QUERO EXPERIMENTAR OZENFIT CAPS!</a>
+            </div>
+        </section>
+
+        <section id="media-recognition" class="fade-in">
+            <div class="container">
+                <h2>Reconhecido e Aprovado pelos Especialistas</h2>
+                <div class="media-recognition">
+                    <img src="/api/placeholder/150/50" alt="Logo Revista Saúde" />
+                    <img src="/api/placeholder/150/50" alt="Logo Programa Bem-Estar" />
+                    <img src="/api/placeholder/150/50" alt="Logo Associação de Nutrição" />
+                </div>
+            </div>
+        </section>
+
+        <section id="quality" class="fade-in">
+            <div class="container">
+                <h2>Compromisso com a Excelência</h2>
+                <p>OzenFit Caps é produzido em instalações certificadas pela ANVISA, seguindo os mais rigorosos padrões de qualidade e segurança. Cada lote passa por testes extensivos para garantir a pureza e eficácia dos ingredientes.</p>
+                <img src="images/quality-seal.png" alt="Selo de Qualidade" style="display:block; margin: 20px auto; max-width: 150px;">
+            </div>
+        </section>
+
+        <section id="faq" class="fade-in">
+            <div class="container">
+                <h2>Perguntas Frequentes</h2>
+                <div class="faq-item">
+                    <div class="faq-question">Como devo tomar OzenFit Caps?</div>
+                    <div class="faq-answer">Recomenda-se tomar 2 cápsulas por dia, preferencialmente antes das principais refeições, com um copo de água.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">OzenFit Caps tem efeitos colaterais?</div>
+                    <div class="faq-answer">OzenFit Caps é feito com ingredientes naturais e geralmente é bem tolerado. No entanto, como com qualquer suplemento, recomenda-se consultar um médico antes de iniciar o uso.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Quanto tempo leva para ver resultados?</div>
+                    <div class="faq-answer">Muitos usuários relatam ver resultados iniciais em 2-4 semanas, mas os resultados podem variar de pessoa para pessoa.</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="imc-calculator" class="fade-in">
+            <div class="container">
+                <h2>Descubra Seu Índice de Massa Corporal (IMC)</h2>
+                <p>O IMC é uma medida que usa sua altura e peso para calcular se seu peso é saudável. É uma ferramenta útil para avaliar se você está no caminho certo para atingir seu peso ideal.</p>
+                <div class="imc-calculator">
+                    <input type="number" id="weight" placeholder="Seu peso em kg">
+                    <input type="number" id="height" placeholder="Sua altura em centímetros">
+                    <button class="btn" onclick="calculateIMC()">Calcular IMC</button>
+                    <div id="imc-result"></div>
+                </div>
+            </div>
+        </section>
+        <div class="units-sold fade-in">
+            <div class="container">
+                Já ajudamos mais de <span id="sold-count">10000</span> pessoas a atingirem seus objetivos!
             </div>
         </div>
-    </section>
 
-    <section id="ingredientes" class="fade-in">
-        <h2>Poder da Natureza em Cada Cápsula</h2>
-        <div class="ingredient">
-            <img src="ingredients/garcinia.jpg" alt="Garcinia Cambogia">
-            <h3>Garcinia Cambogia</h3>
-            <p>Reduz o apetite e bloqueia a produção de gordura</p>
+        <div class="trust-badges fade-in">
+            <div class="container">
+                <img src="/api/placeholder/80/80" alt="Pagamento Seguro">
+                <img src="/api/placeholder/80/80" alt="Entrega Garantida">
+                <img src="/api/placeholder/80/80" alt="Satisfação Garantida">
+            </div>
         </div>
-        <div class="ingredient">
-            <img src="ingredients/green-tea.jpg" alt="Chá Verde">
-            <h3>Chá Verde</h3>
-            <p>Acelera o metabolismo e aumenta a queima de gordura</p>
-        </div>
-        <div class="ingredient">
-            <img src="ingredients/caffeine.jpg" alt="Cafeína">
-            <h3>Cafeína</h3>
-            <p>Aumenta a energia e melhora o desempenho físico</p>
-        </div>
-        <a href="#produtos" class="btn">EXPERIMENTE O PODER DA NATUREZA!</a>
-    </section>
 
-    <div class="sticky-cta">
-        <a href="#produtos" class="btn">COMPRE AGORA!</a>
-    </div>
+        <section id="produtos" class="fade-in">
+            <div class="container">
+                <h2>Escolha Sua Transformação e Comece Hoje Mesmo!</h2>
+                <div class="product">
+                    <img src="images/produto-1.jpg" alt="Kit Iniciante OzenFit Caps" style="max-width: 200px; margin-bottom: 20px;">
+                    <h3>Kit Iniciante - 30 Dias de Transformação</h3>
+                    <p>1 Pote de OzenFit Caps (60 cápsulas)</p>
+                    <p class="price">De <strike>R$199,90</strike> por apenas <span class="highlight">R$99,90!</span></p>
+                    <div class="countdown" id="countdown1">Oferta termina em: <span id="timer1"></span></div>
+                    <a href="comprar.html" class="btn">QUERO COMEÇAR MINHA TRANSFORMAÇÃO!</a>
+                    <p><em>Atenção: Últimas unidades em estoque!</em></p>
+                </div>
+                <div class="product">
+                    <img src="images/produto-2.jpg" alt="Kit Transformação Total OzenFit Caps" style="max-width: 200px; margin-bottom: 20px;">
+                    <h3>Kit Transformação Total - 90 Dias</h3>
+                    <p>3 Potes de OzenFit Caps (180 cápsulas) + 1 Pote GRÁTIS!</p>
+                    <p class="price">De <strike>R$599,90</strike> por apenas <span class="highlight">R$299,90!</span></p>
+                    <div class="countdown" id="countdown2">Oferta termina em: <span id="timer2"></span></div>
+                    <a href="comprar.html" class="btn">QUERO TRANSFORMAÇÃO MÁXIMA!</a>
+                    <p><em>Economize R$300 e garanta resultados duradouros!</em></p>
+                </div>
+            </div>
+        </section>
 
-    <section id="video" class="fade-in">
-        <h2>Veja OzenFit Caps em Ação</h2>
-        <div style="text-align: center;">
-            <img src="/api/placeholder/640/360" alt="Vídeo Explicativo" style="max-width: 100%; height: auto;"/>
-            <p><em>Clique para assistir como OzenFit Caps revoluciona o emagrecimento</em></p>
-        </div>
-        <a href="#produtos" class="btn">QUERO EXPERIMENTAR OZENFIT CAPS!</a>
-    </section>
+        <section id="garantia" class="fade-in">
+            <div class="btn-center-container">
+                <h2>Satisfação 100% Garantida ou Seu Dinheiro de Volta!</h2>
+                <p>Acreditamos tanto no poder do OzenFit Caps que oferecemos uma <strong>garantia incondicional de 30 dias</strong>. Se você não ficar completamente satisfeito com os resultados, devolvemos cada centavo do seu investimento. Sem perguntas, sem burocracia!</p>
+                <img src="images/garantia.jpg" alt="Garantia" style="display:block; margin: 0 auto; max-width: 150px;">
+            </div>
+        </section>
 
-    <section id="media-recognition" class="fade-in">
-        <h2>Reconhecido e Aprovado pelos Especialistas</h2>
-        <div class="media-recognition">
-            <img src="/api/placeholder/150/50" alt="Logo Revista Saúde" />
-            <img src="/api/placeholder/150/50" alt="Logo Programa Bem-Estar" />
-            <img src="/api/placeholder/150/50" alt="Logo Associação de Nutrição" />
-        </div>
-    </section>
-
-    <section id="quality" class="fade-in">
-        <h2>Compromisso com a Excelência</h2>
-        <p>OzenFit Caps é produzido em instalações certificadas pela ANVISA, seguindo os mais rigorosos padrões de qualidade e segurança. Cada lote passa por testes extensivos para garantir a pureza e eficácia dos ingredientes.</p>
-        <img src="images/quality-seal.png" alt="Selo de Qualidade" style="display:block; margin: 20px auto; max-width: 150px;">
-    </section>
-
-    <section id="faq" class="fade-in">
-        <h2>Perguntas Frequentes</h2>
-        <div class="faq-item">
-            <div class="faq-question">Como devo tomar OzenFit Caps?</div>
-            <div class="faq-answer">Recomenda-se tomar 2 cápsulas por dia, preferencialmente antes das principais refeições, com um copo de água.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">OzenFit Caps tem efeitos colaterais?</div>
-            <div class="faq-answer">OzenFit Caps é feito com ingredientes naturais e geralmente é bem tolerado. No entanto, como com qualquer suplemento, recomenda-se consultar um médico antes de iniciar o uso.</div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">Quanto tempo leva para ver resultados?</div>
-            <div class="faq-answer">Muitos usuários relatam ver resultados iniciais em 2-4 semanas, mas os resultados podem variar de pessoa para pessoa.</div>
-        </div>
-    </section>
-
-    <section id="imc-calculator" class="fade-in">
-        <h2>Descubra Seu Índice de Massa Corporal (IMC)</h2>
-        <p>O IMC é uma medida que usa sua altura e peso para calcular se seu peso é saudável. É uma ferramenta útil para avaliar se você está no caminho certo para atingir seu peso ideal.</p>
-        <div class="imc-calculator">
-            <input type="number" id="weight" placeholder="Seu peso em kg">
-            <input type="number" id="height" placeholder="Sua altura em centimetros
-            <button class="btn" onclick="calculateIMC()">Calcular IMC</button>
-            <div id="imc-result"></div>
-        </div>
-    </section>
-
-    <div class="units-sold fade-in">
-        Já ajudamos mais de <span id="sold-count">10000</span> pessoas a atingirem seus objetivos!
-    </div>
-
-    <div class="trust-badges fade-in">
-        <img src="/api/placeholder/80/80" alt="Pagamento Seguro">
-        <img src="/api/placeholder/80/80" alt="Entrega Garantida">
-        <img src="/api/placeholder/80/80" alt="Satisfação Garantida">
-    </div>
-    <section id="produtos" class="fade-in">
-        <h2>Escolha Sua Transformação e Comece Hoje Mesmo!</h2>
-        <div class="product">
-            <img src="images/produto-1.jpg" alt="Kit Iniciante OzenFit Caps" style="max-width: 200px; margin-bottom: 20px;">
-            <h3>Kit Iniciante - 30 Dias de Transformação</h3>
-            <p>1 Pote de OzenFit Caps (60 cápsulas)</p>
-            <p class="price">De <strike>R$199,90</strike> por apenas <span class="highlight">R$99,90!</span></p>
-            <div class="countdown" id="countdown1">Oferta termina em: <span id="timer1"></span></div>
-            <a href="comprar.html" class="btn">QUERO COMEÇAR MINHA TRANSFORMAÇÃO!</a>
-            <p><em>Atenção: Últimas unidades em estoque!</em></p>
-        </div>
-        <div class="product">
-            <img src="images/produto-2.jpg" alt="Kit Transformação Total OzenFit Caps" style="max-width: 200px; margin-bottom: 20px;">
-            <h3>Kit Transformação Total - 90 Dias</h3>
-            <p>3 Potes de OzenFit Caps (180 cápsulas) + 1 Pote GRÁTIS!</p>
-            <p class="price">De <strike>R$599,90</strike> por apenas <span class="highlight">R$299,90!</span></p>
-            <div class="countdown" id="countdown2">Oferta termina em: <span id="timer2"></span></div>
-            <a href="comprar.html" class="btn">QUERO TRANSFORMAÇÃO MÁXIMA!</a>
-            <p><em>Economize R$300 e garanta resultados duradouros!</em></p>
-        </div>
-    </section>
-
-    <section id="garantia" class="fade-in">
-        <h2>Satisfação 100% Garantida ou Seu Dinheiro de Volta!</h2>
-        <p>Acreditamos tanto no poder do OzenFit Caps que oferecemos uma <strong>garantia incondicional de 30 dias</strong>. Se você não ficar completamente satisfeito com os resultados, devolvemos cada centavo do seu investimento. Sem perguntas, sem burocracia!</p>
-        <img src="images/garantia.jpg" alt="Garantia" style="display:block; margin: 0 auto; max-width: 150px;">
-    </section>
-
-    <section id="cta" class="fade-in">
-        <h2>Não Espere Mais! Sua Nova Vida Começa Agora!</h2>
-        <p>A cada minuto que passa, você está perdendo a chance de ter o corpo dos seus sonhos. OzenFit Caps é a chave para desbloquear seu verdadeiro potencial!</p>
-        <a href="#produtos" class="btn">QUERO TRANSFORMAR MEU CORPO HOJE!</a>
-    </section>
+        <section id="cta" class="fade-in">
+            <div class="container">
+                <h2>Não Espere Mais! Sua Nova Vida Começa Agora!</h2>
+                <p>A cada minuto que passa, você está perdendo a chance de ter o corpo dos seus sonhos. OzenFit Caps é a chave para desbloquear seu verdadeiro potencial!</p>
+                <a href="#produtos" class="btn">QUERO TRANSFORMAR MEU CORPO HOJE!</a>
+            </div>
+        </section>
+    </main>
 
     <footer>
-        <p><strong>ATENÇÃO: Estoque Limitado! Não perca a chance de transformar seu corpo e sua vida!</strong></p>
-        <p>*Resultados podem variar de pessoa para pessoa. Estas declarações não foram avaliadas pela ANVISA. Este produto não se destina a diagnosticar, tratar, curar ou prevenir qualquer doença.</p>
-        <p>&copy; 2023 OzenFit Caps. Todos os direitos reservados.</p>
+        <div class="container">
+            <p><strong>ATENÇÃO: Estoque Limitado! Não perca a chance de transformar seu corpo e sua vida!</strong></p>
+            <p>*Resultados podem variar de pessoa para pessoa. Estas declarações não foram avaliadas pela ANVISA. Este produto não se destina a diagnosticar, tratar, curar ou prevenir qualquer doença.</p>
+            <p>&copy; 2023 OzenFit Caps. Todos os direitos reservados.</p>
+        </div>
     </footer>
 
     <script>
+        // O JavaScript permanece o mesmo que o original
         function initializeCountdown(id, endtime) {
             var timer = document.getElementById(id);
             function updateClock() {
