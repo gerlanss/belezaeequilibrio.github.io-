@@ -28,6 +28,7 @@
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            text-align: center;
         }
         h1, h2, h3 {
             color: var(--secondary-color);
@@ -47,7 +48,7 @@
             border-radius: 5px;
             text-align: center;
             transition: all 0.3s;
-            margin: 10px;
+            margin: 10px auto;
         }
         .btn:hover {
             background-color: var(--secondary-color);
@@ -131,12 +132,14 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
+            align-items: flex-start;
         }
         .ingredient {
             flex: 1 1 30%;
             margin: 10px;
             text-align: center;
             min-width: 200px;
+            max-width: 300px;
         }
         .ingredient img {
             width: 100px;
@@ -237,29 +240,6 @@
             font-weight: bold;
             text-align: center;
         }
-        .btn-center-container {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            margin: 20px 0;
-        }
-        
-        .btn-center {
-            display: inline-block;
-            padding: 15px 30px;
-            background-color: var(--primary-color);
-            color: #fff;
-            text-decoration: none;
-            font-size: 18px;
-            border-radius: 5px;
-            text-align: center;
-            transition: all 0.3s;
-        }
-        
-        .btn-center:hover {
-            background-color: var(--secondary-color);
-            transform: scale(1.05);
-        }
         .normal-imc {
             background-color: #2ecc71;
             color: white;
@@ -333,16 +313,16 @@
 
     <main>
         <section id="intro" class="fade-in">
-            <div class="btn-center-container">
+            <div class="container">
                 <h2>Você Está Pronto para a Mudança da Sua Vida?</h2>
                 <p>OzenFit Caps não é apenas mais um suplemento. É a <strong>revolução do emagrecimento</strong> que vai transformar seu corpo e sua autoestima em tempo recorde!</p>
                 <img src="images/ozenfit-caps.jpg" alt="OzenFit Caps" style="display:block; margin: 0 auto; max-width: 300px; width: 100%;">
                 <a href="#produtos" class="btn">COMECE SUA TRANSFORMAÇÃO HOJE!</a>
             </div>
         </section>
-
+        
         <section id="beneficios" class="fade-in">
-            <div class="btn-center-container">
+            <div class="container">
                 <h2>Por Que OzenFit Caps é a Escolha dos Vencedores?</h2>
                 <ul style="list-style-type: none; padding: 0; text-align: center;">
                     <li><strong>Metabolismo Turbinado:</strong> Queime calorias 24/7, mesmo dormindo!</li>
@@ -354,7 +334,7 @@
                 <a href="#produtos" class="btn">QUERO ESSES BENEFÍCIOS AGORA!</a>
             </div>
         </section>
-
+        
         <section id="como-funciona" class="fade-in">
             <div class="container">
                 <h2>Como OzenFit Caps Transforma Seu Corpo</h2>
@@ -378,9 +358,9 @@
                 </div>
             </div>
         </section>
-
+        
         <section id="ingredientes" class="fade-in">
-            <div class="btn-center-container">
+            <div class="container">
                 <h2>Poder da Natureza em Cada Cápsula</h2>
                 <div class="ingredients-grid">
                     <div class="ingredient">
@@ -402,12 +382,9 @@
                 <a href="#produtos" class="btn">EXPERIMENTE O PODER DA NATUREZA!</a>
             </div>
         </section>
-        <div class="sticky-cta">
-            <a href="#produtos" class="btn">COMPRE AGORA!</a>
-        </div>
-
+        
         <section id="video" class="fade-in">
-            <div class="btn-center-container">
+            <div class="container">
                 <h2>Veja OzenFit Caps em Ação</h2>
                 <div style="text-align: center;">
                     <img src="/api/placeholder/640/360" alt="Vídeo Explicativo" style="max-width: 100%; height: auto;"/>
@@ -416,7 +393,6 @@
                 <a href="#produtos" class="btn">QUERO EXPERIMENTAR OZENFIT CAPS!</a>
             </div>
         </section>
-
         <section id="media-recognition" class="fade-in">
             <div class="container">
                 <h2>Reconhecido e Aprovado pelos Especialistas</h2>
